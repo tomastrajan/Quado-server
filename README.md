@@ -1,4 +1,4 @@
 Quado-server
 ============
 
-Score sharing backend
+Score sharing backend developed with Sails.js
