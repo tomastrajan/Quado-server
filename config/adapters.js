@@ -14,7 +14,7 @@
 
 module.exports.adapters = {
 
-    'default': 'postgres',
+    'default'   : process.env.DB_ADAPTER,
 
     postgres: {
         module   : 'sails-postgresql',
@@ -23,6 +23,17 @@ module.exports.adapters = {
         user     : process.env.POSTGRES_USER,
         password : process.env.POSTGRES_PASSWORD,
         database : process.env.POSTGRES_DATABASE,
+
+        schema   : true //This makes sure that sails matches the database schema to your models.
+    },
+
+    mysql: {
+        module   : 'sails-mysql',
+        host     : process.env.MYSQL_HOST,
+        port     : process.env.MYSQL_PORT,
+        user     : process.env.MYSQL_USER,
+        password : process.env.MYSQL_PASSWORD,
+        database : process.env.MYSQL_DATABASE,
 
         schema   : true //This makes sure that sails matches the database schema to your models.
     }

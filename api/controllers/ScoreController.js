@@ -1,6 +1,5 @@
 var ScoreController = {
 
-    // Override
     create: function(req, res) {
         ScoreService.createOrUpdateScore(req.body, function(err, score) {
             res.json(score);

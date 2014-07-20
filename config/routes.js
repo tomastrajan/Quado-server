@@ -36,6 +36,11 @@ module.exports.routes = {
         view: 'home/index'
     },
 
+    'post /score': {
+        controller    : 'score',
+        action        : 'create'
+    },
+
     'get /score/:gameMode': {
         controller    : 'score',
         action        : 'top10'
