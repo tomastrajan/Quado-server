@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">Campaign score table</div>
+            <div class="panel-body">
+                <table class="table">
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Level</th>
+                        <th>Score</th>
+                    </tr>
+                    <% _.each(scores, function (score) { %>
+                        <tr>
+                            <td><%= score.position %></td>
+                            <td><%= score.playerName %></td>
+                            <td><%= score.level %>.</td>
+                            <td><%= score.score %></td>
+                        </tr>
+                    <% }) %>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

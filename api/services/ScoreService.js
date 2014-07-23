@@ -80,6 +80,25 @@ var ScoreService = {
             });
             callback(err, scores);
         });
+    },
+
+    findScores: function (gameMode, callback) {
+        Score.find({
+            where: {
+                score: {
+                    '>': 0
+                },
+                gameMode: gameMode
+            },
+            sort: 'score DESC'
+        }, function(err, scores) {
+            var i = 1;
+            scores.forEach(function(score) {
+                score.position = i;
+                i++;
+            });
+            callback(err, scores);
+        });
     }
 
 };

@@ -19,7 +19,11 @@ module.exports.policies = {
     // '*': true
 
     // Allow access for requests with valid api key
-    '*': 'hasApiKey'
+    '*': 'hasApiKey',
+
+    PublicController: {
+        '*': true
+    }
 
 
     /*
