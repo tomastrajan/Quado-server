@@ -3,7 +3,7 @@
         <div class="panel panel-default">
             <div class="panel-heading">Campaign score table</div>
             <div class="panel-body">
-                <table class="table">
+                <table class="table table-striped">
                     <tr>
                         <th>#</th>
                         <th>Name</th>
@@ -11,11 +11,11 @@
                         <th>Score</th>
                     </tr>
                     <% _.each(scores, function (score) { %>
-                        <tr>
-                            <td><%= score.position %></td>
+                        <tr <%= score.position === 1 ? 'class="success"' : '' %>>
+                            <td> <%= score.position %></td>
                             <td><%= score.playerName %></td>
-                            <td><%= score.level %>.</td>
-                            <td><%= score.score %></td>
+                            <td class="align-right"><%= score.level %>.</td>
+                            <td class="align-right"><%= score.score %></td>
                         </tr>
                     <% }) %>
                 </table>
