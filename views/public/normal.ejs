@@ -11,11 +11,11 @@
                         <th>Score</th>
                     </tr>
                     <% _.each(scores, function (score) { %>
-                        <tr <%= score.position === 1 ? 'class="success"' : '' %>>
+                        <tr <%= score.position === 1 ? 'class=success' : '' %>>
                             <td> <%= score.position %></td>
                             <td><%= score.playerName %></td>
-                            <td class="align-right"><%= score.level %>.</td>
-                            <td class="align-right"><%= score.score %></td>
+                            <td class="text-right"><%= score.level %>.</td>
+                            <td class="text-right"><%= score.score %></td>
                         </tr>
                     <% }) %>
                 </table>
