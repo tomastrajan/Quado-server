@@ -17,3 +17,32 @@ body {
     left:15px;
     height:46px;
 }
+
+.phoneScreenshot {
+    height: 220px;
+}
+
+.phoneScreenshot img {
+    z-index: 10000;
+    position: absolute;
+    top: -125px;
+    left:50%;
+    margin-left: -261px;
+}
+
+.phoneScreenshotXs {
+    position: relative;
+    top: 30px;
+}
+
+
+.phoneScreenshotSm {
+    position: relative;
+    top: 48px;
+}
+
+.phoneScreenshotXs img, .phoneScreenshotSm img {
+    margin: 0 auto;
+}
+
+

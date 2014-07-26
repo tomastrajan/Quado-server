@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>QUADO - android breakout (arkanoid) type game</title>
+        <title>Quado Arkanoid - beautiful android arkanoid (breakout) game</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="/styles/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="/styles/display.css">
+        <link rel="stylesheet" type="text/css" href="/styles/carousel.css">
+        <link rel="stylesheet" type="text/css" href="/styles/colors.css">
     </head>
 
     <body>
@@ -26,19 +29,37 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="/public/arcade/">Leader board Arcade</a></li>
-                        <li><a href="/public/normal/">Leader board Normal</a></li>
+                        <li><a href="/public/arcade/"><i class="fa fa-trophy fa-lg"></i> Highscores Arcade</a></li>
+                        <li><a href="/public/normal/"><i class="fa fa-star fa-lg"></i> Highscores Normal</a></li>
                         </li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="https://github.com/tomastrajan/Quado">Github</a></li>
+                        <li>
+                            <a href="https://github.com/tomastrajan/Quado"><i class="fa fa-github fa-lg"></i> Github</a>
+                        </li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>
         </div>
 
+
+        <%- body %>
+
         <div class="container">
-            <%- body %>
+            <div class="row">
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-12 text-center">
+                    <hr />
+                    <small>Trajan 2014</small>
+                    <br />
+                    <br />
+                </div>
+            </div>
         </div>
 
         <!-- Bring in the socket.io client -->
