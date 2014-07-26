@@ -9,7 +9,7 @@
                             &laquo;
                         </a>
                     <% } else { %>
-                        <a href="/public/arcade/?page=<%= pagination.page - 1 %>&pageSize=<%= pagination.pageSize %>" >
+                        <a href="<%= pagination.url %>?page=<%= pagination.page - 1 %>&pageSize=<%= pagination.pageSize %>" >
                             &laquo;
                         </a>
                     <% } %>
@@ -17,7 +17,7 @@
 
                 <% for(var i = 0; i < pagination.pageCount; i++) {%>
                     <li <%= pagination.page === i ? 'class=active' : '' %> >
-                        <a href="/public/arcade/?page=<%= i %>&pageSize=<%= pagination.pageSize %>">
+                        <a href="<%= pagination.url %>?page=<%= i %>&pageSize=<%= pagination.pageSize %>">
                             <%= i + 1 %>
                         </a>
                     </li>
@@ -30,7 +30,7 @@
                             &raquo;
                         </a>
                     <% } else { %>
-                        <a href="/public/arcade/?page=<%= pagination.page + 1 %>&pageSize=<%= pagination.pageSize %>" >
+                        <a href="<%= pagination.url %>?page=<%= pagination.page + 1 %>&pageSize=<%= pagination.pageSize %>" >
                             &raquo;
                         </a>
                     <% } %>
