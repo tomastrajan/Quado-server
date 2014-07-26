@@ -1,0 +1,48 @@
+<div class="row">
+    <form class="form-inline" role="form">
+        <div class="col-xs-offset-2 col-xs-8 text-center">
+            <ul class="pagination">
+
+                <li <%= pagination.page === 0 ? 'class=disabled' : '' %> >
+                    <%if (pagination.page === 0) { %>
+                        <a href="#" >
+                            &laquo;
+                        </a>
+                    <% } else { %>
+                        <a href="/public/arcade/?page=<%= pagination.page - 1 %>&pageSize=<%= pagination.pageSize %>" >
+                            &laquo;
+                        </a>
+                    <% } %>
+                </li>
+
+                <% for(var i = 0; i < pagination.pageCount; i++) {%>
+                    <li <%= pagination.page === i ? 'class=active' : '' %> >
+                        <a href="/public/arcade/?page=<%= i %>&pageSize=<%= pagination.pageSize %>">
+                            <%= i + 1 %>
+                        </a>
+                    </li>
+                <% } %>
+
+
+                <li <%= pagination.page === pagination.pageCount - 1 ? 'class=disabled' : '' %> >
+                    <%if (pagination.page === pagination.pageCount - 1) { %>
+                        <a href="#" >
+                            &raquo;
+                        </a>
+                    <% } else { %>
+                        <a href="/public/arcade/?page=<%= pagination.page + 1 %>&pageSize=<%= pagination.pageSize %>" >
+                            &raquo;
+                        </a>
+                    <% } %>
+                </li>
+
+                <select class="form-control" onchange="window.location=window.location.href.match(/^[^\#\?]+/)[0]+'?page=0&pageSize='+this.value">
+                    <option <%= pagination.pageSize === 5 ? selected='selected' : '' %> value="5">5</option>
+                    <option <%= pagination.pageSize === 10 ? selected='selected' : ''  %> value="10">10</option>
+                    <option <%= pagination.pageSize === 20 ? selected='selected' : ''  %> value="20">20</option>
+                    <option <%= pagination.pageSize === 50 ? selected='selected' : ''  %> value="50">50</option>
+                </select>
+            </ul>
+        </div>
+    </form>
+</div>

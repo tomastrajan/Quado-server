@@ -4,22 +4,28 @@
             <div class="panel-heading">Arcade score table</div>
             <div class="panel-body">
                 <table class="table table-striped">
-                    <tr>
-                        <th>#</th>
-                        <th>Name</th>
-                        <th>Time</th>
-                        <th>Score</th>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th class="text-right">Time</th>
+                            <th class="text-right">Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
                     <% _.each(scores, function (score) { %>
                         <tr <%= score.position === 1 ? 'class=success' : '' %>>
                             <td> <%= score.position %></td>
                             <td><%= score.playerName %></td>
                             <td class="text-right"><%= score.time %> sec</td>
-                            <td class="text-right"><%= score.score %></td>
+                            <td class="text-right"><strong><%= score.score %></td>
                         </tr>
                     <% }) %>
+                    </tbody>
                 </table>
+                <%- partial('../partials/pagination') %>
             </div>
         </div>
     </div>
 </div>
+

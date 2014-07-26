@@ -1,0 +1,19 @@
+body {
+  padding-top: 70px;
+}
+
+.pagination select {
+    margin-left:20px;
+}
+
+.navbar-brand {
+    position: relative;
+    margin-right:26px;
+}
+
+.navbar-brand img {
+    position: absolute;
+    top:2px;
+    left:15px;
+    height:46px;
+}

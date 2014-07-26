@@ -1,3 +1,15 @@
+var getScoresByGameModeQuery = function(gameMode) {
+    return {
+        where: {
+            score: {
+                '>': 0
+            },
+            gameMode: gameMode
+        },
+        sort: 'score DESC'
+    }
+}
+
 var ScoreService = {
 
     createOrUpdateScore: function(newScore, callback) {
@@ -30,15 +42,8 @@ var ScoreService = {
     findScoresForPlayer: function(gameMode, playerUuid, callback) {
         sails.log.info('Find scores for player - ' + gameMode + "/" + playerUuid);
         var result = [];
-        Score.find({
-            where: {
-                score: {
-                    '>': 0
-                },
-                gameMode: gameMode
-            },
-            sort: 'score DESC'
-        }, function(err, scores) {
+        Score.find(getScoresByGameModeQuery(gameMode))
+        .done(function(err, scores) {
             for (var i = 0; i < scores.length; i++) {
                 if (scores[i].playerUuid === playerUuid) {
                     for (var j = 4; j >= 1; j--) {
@@ -63,16 +68,9 @@ var ScoreService = {
     },
 
     findTopTenScores: function (gameMode, callback) {
-        Score.find({
-            where: {
-                score: {
-                    '>': 0
-                },
-                gameMode: gameMode
-            },
-            limit: 10,
-            sort: 'score DESC'
-        }, function(err, scores) {
+        Score.find(getScoresByGameModeQuery(gameMode))
+        .limit(10)
+        .done(function(err, scores) {
             var i = 1;
             scores.forEach(function(score) {
                 score.position = i;
@@ -82,23 +80,25 @@ var ScoreService = {
         });
     },
 
-    findScores: function (gameMode, callback) {
-        Score.find({
-            where: {
-                score: {
-                    '>': 0
-                },
-                gameMode: gameMode
-            },
-            sort: 'score DESC'
-        }, function(err, scores) {
-            var i = 1;
-            scores.forEach(function(score) {
-                score.position = i;
-                i++;
+    findScores: function (gameMode, pagination, callback) {
+
+        Score.find(getScoresByGameModeQuery(gameMode)).done(function(err, scores) {
+            pagination.count = scores.length;
+            pagination.pageCount = Math.ceil(pagination.count / pagination.pageSize);
+
+            Score.find(getScoresByGameModeQuery(gameMode))
+            .limit(pagination.pageSize)
+            .skip(pagination.page * pagination.pageSize)
+            .done(function(err, scores) {
+                var i = 1;
+                scores.forEach(function(score) {
+                    score.position = i + (pagination.page * pagination.pageSize);
+                    i++;
+                });
+                callback(err, scores, pagination);
             });
-            callback(err, scores);
         });
+
     }
 
 };

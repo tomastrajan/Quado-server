@@ -5,16 +5,18 @@ var PublicController = {
     },
 
     arcade: function(req, res) {
-        ScoreService.findScores('ARCADE', function(err, scores) {
+        ScoreService.findScores('ARCADE', PaginationService.getPagination(req), function(err, scores, pagination) {
             return res.view({
+                pagination: pagination,
                 scores: scores
             });
         });
     },
 
     normal: function(req, res) {
-        ScoreService.findScores('NORMAL', function(err, scores) {
+        ScoreService.findScores('NORMAL', PaginationService.getPagination(req), function(err, scores, pagination) {
             return res.view({
+                pagination: pagination,
                 scores: scores
             });
         });

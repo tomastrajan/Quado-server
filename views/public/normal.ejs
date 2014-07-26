@@ -4,21 +4,26 @@
             <div class="panel-heading">Campaign score table</div>
             <div class="panel-body">
                 <table class="table table-striped">
-                    <tr>
-                        <th>#</th>
-                        <th>Name</th>
-                        <th>Level</th>
-                        <th>Score</th>
-                    </tr>
-                    <% _.each(scores, function (score) { %>
-                        <tr <%= score.position === 1 ? 'class=success' : '' %>>
-                            <td> <%= score.position %></td>
-                            <td><%= score.playerName %></td>
-                            <td class="text-right"><%= score.level %>.</td>
-                            <td class="text-right"><%= score.score %></td>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th class="text-right">Level</th>
+                            <th class="text-right">Score</th>
                         </tr>
-                    <% }) %>
+                    </thead>
+                    <tbody>
+                        <% _.each(scores, function (score) { %>
+                            <tr <%= score.position === 1 ? 'class=success' : '' %>>
+                                <td> <%= score.position %></td>
+                                <td><%= score.playerName %></td>
+                                <td class="text-right"><%= score.level %>.</td>
+                                <td class="text-right"><strong><%= score.score %></strong></td>
+                            </tr>
+                        <% }) %>
+                    </tbody>
                 </table>
+                <%- partial('../partials/pagination') %>
             </div>
         </div>
     </div>
