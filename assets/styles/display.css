@@ -47,28 +47,97 @@ body {
 
 .trophy {
     position: relative;
-    text-align: center
-    font-size: 1em;
+    text-align: center;
+    height:100px;
 }
 
-.trophy-2x {
+.trophy h3 {
+}
+
+.trophy1 .cup {
+    font-size: 8em;
+}
+
+.trophy1 .star {
+    position: absolute;
+    top: 23px;
+    left: 50%;
+    margin-left: -13px;
     font-size: 2em;
 }
 
+.trophy2 .cup {
+    position: relative;
+    top:27px;
 
-.trophy-3x {
-    font-size: 3em;
+    font-size: 6em;
 }
 
-.trophy .cup {
-    font-size: 3em;
-}
-
-.trophy .star {
+.trophy2 .star {
     position: absolute;
-    top: 25%;
+    top: 45px;
     left: 50%;
-    margin-left: -18px;
+    margin-left: -9px;
+    font-size: 1.5em;
+}
+
+.trophy3 .cup {
+    position: relative;
+    top: 53px;
+
+    font-size: 4em;
+}
+
+.trophy3 .star {
+    position: absolute;
+    top: 63px;
+    left: 50%;
+    margin-left: -7px;
     font-size: 1em;
 }
+
+.gold {
+    background: rgb(247,185,39);
+    background: -moz-linear-gradient(-45deg, rgba(247,185,39,1) 0%, rgba(255,226,86,1) 100%);
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(247,185,39,1)), color-stop(100%,rgba(255,226,86,1)));
+    background: -webkit-linear-gradient(-45deg, rgba(247,185,39,1) 0%,rgba(255,226,86,1) 100%);
+    background: -o-linear-gradient(-45deg, rgba(247,185,39,1) 0%,rgba(255,226,86,1) 100%);
+    background: -ms-linear-gradient(-45deg, rgba(247,185,39,1) 0%,rgba(255,226,86,1) 100%);
+    background: linear-gradient(135deg, rgba(247,185,39,1) 0%,rgba(255,226,86,1) 100%);
+}
+.gold-text {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.silver {
+    background: rgb(168,168,168);
+    background: -moz-linear-gradient(-45deg, rgba(168,168,168,1) 0%, rgba(221,221,221,1) 100%);
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(168,168,168,1)), color-stop(100%,rgba(221,221,221,1)));
+    background: -webkit-linear-gradient(-45deg, rgba(168,168,168,1) 0%,rgba(221,221,221,1) 100%);
+    background: -o-linear-gradient(-45deg, rgba(168,168,168,1) 0%,rgba(221,221,221,1) 100%);
+    background: -ms-linear-gradient(-45deg, rgba(168,168,168,1) 0%,rgba(221,221,221,1) 100%);
+    background: linear-gradient(135deg, rgba(168,168,168,1) 0%,rgba(221,221,221,1) 100%);
+}
+.silver-text {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.bronze {
+    background: rgb(127,85,53);
+    background: -moz-linear-gradient(-45deg, rgba(127,85,53,1) 0%, rgba(214,144,74,1) 100%);
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(127,85,53,1)), color-stop(100%,rgba(214,144,74,1)));
+    background: -webkit-linear-gradient(-45deg, rgba(127,85,53,1) 0%,rgba(214,144,74,1) 100%);
+    background: -o-linear-gradient(-45deg, rgba(127,85,53,1) 0%,rgba(214,144,74,1) 100%);
+    background: -ms-linear-gradient(-45deg, rgba(127,85,53,1) 0%,rgba(214,144,74,1) 100%);
+    background: linear-gradient(135deg, rgba(127,85,53,1) 0%,rgba(214,144,74,1) 100%);
+}
+.bronze-text {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+
 

@@ -67,9 +67,9 @@ var ScoreService = {
         });
     },
 
-    findTopTenScores: function (gameMode, callback) {
+    findTopScores: function (gameMode, count, callback) {
         Score.find(getScoresByGameModeQuery(gameMode))
-        .limit(10)
+        .limit(count)
         .done(function(err, scores) {
             var i = 1;
             scores.forEach(function(score) {
@@ -93,7 +93,6 @@ var ScoreService = {
                 var i = 1;
                 scores.forEach(function(score) {
                     score.position = i + (pagination.page * pagination.pageSize);
-                    sails.log.info(score);
                     i++;
                 });
                 callback(err, scores, pagination);

@@ -16,7 +16,7 @@ var ScoreController = {
 
     top10: function(req, res) {
         var gameMode = req.param('gameMode');
-        ScoreService.findTopTenScores(gameMode, function(err, scores) {
+        ScoreService.findTopScores(gameMode, 10, function(err, scores) {
             res.json(scores);
         });
     }

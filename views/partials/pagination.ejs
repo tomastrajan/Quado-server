@@ -1,6 +1,6 @@
 <div class="row">
     <form class="form-inline" role="form">
-        <div class="col-xs-offset-2 col-xs-8 text-center">
+        <div class="col-xs-7 text-right">
             <ul class="pagination">
 
                 <li <%= pagination.page === 0 ? 'class=disabled' : '' %> >
@@ -35,14 +35,15 @@
                         </a>
                     <% } %>
                 </li>
-
-                <select class="form-control" onchange="window.location=window.location.href.match(/^[^\#\?]+/)[0]+'?page=0&pageSize='+this.value">
-                    <option <%= pagination.pageSize === 5 ? selected='selected' : '' %> value="5">5</option>
-                    <option <%= pagination.pageSize === 10 ? selected='selected' : ''  %> value="10">10</option>
-                    <option <%= pagination.pageSize === 20 ? selected='selected' : ''  %> value="20">20</option>
-                    <option <%= pagination.pageSize === 50 ? selected='selected' : ''  %> value="50">50</option>
-                </select>
             </ul>
+        </div>
+        <div class="col-xs-5 text-left" style="padding-top:20px;">
+            <select class="form-control" onchange="window.location=window.location.href.match(/^[^\#\?]+/)[0]+'?page=0&pageSize='+this.value">
+                <option <%= pagination.pageSize === 5 ? selected='selected' : '' %> value="5">5</option>
+                <option <%= pagination.pageSize === 10 ? selected='selected' : ''  %> value="10">10</option>
+                <option <%= pagination.pageSize === 20 ? selected='selected' : ''  %> value="20">20</option>
+                <option <%= pagination.pageSize === 50 ? selected='selected' : ''  %> value="50">50</option>
+            </select>
         </div>
     </form>
 </div>
