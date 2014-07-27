@@ -93,6 +93,7 @@ var ScoreService = {
                 var i = 1;
                 scores.forEach(function(score) {
                     score.position = i + (pagination.page * pagination.pageSize);
+                    sails.log.info(score);
                     i++;
                 });
                 callback(err, scores, pagination);

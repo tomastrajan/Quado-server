@@ -1,3 +1,5 @@
+var moment = require('moment');
+
 var PublicController = {
 
     index: function(req, res) {
@@ -8,7 +10,8 @@ var PublicController = {
         ScoreService.findScores('ARCADE', PaginationService.getPagination(req), function(err, scores, pagination) {
             return res.view({
                 pagination: pagination,
-                scores: scores
+                scores: scores,
+                moment: moment
             });
         });
     },
@@ -17,7 +20,8 @@ var PublicController = {
         ScoreService.findScores('NORMAL', PaginationService.getPagination(req), function(err, scores, pagination) {
             return res.view({
                 pagination: pagination,
-                scores: scores
+                scores: scores,
+                moment: moment
             });
         });
     },

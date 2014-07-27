@@ -11,6 +11,7 @@
                                 <th>Name</th>
                                 <th class="text-right">Time</th>
                                 <th class="text-right">Score</th>
+                                <th class="text-right">Played</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -20,6 +21,7 @@
                                 <td><%= score.playerName %></td>
                                 <td class="text-right"><%= score.time %> sec</td>
                                 <td class="text-right"><strong><%= score.score %></td>
+                                <td class="text-right"><%= moment(score.updatedAt).fromNow() %></td>
                             </tr>
                         <% }) %>
                         </tbody>
