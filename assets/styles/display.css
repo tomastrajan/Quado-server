@@ -45,4 +45,30 @@ body {
     margin: 0 auto;
 }
 
+.trophy {
+    position: relative;
+    text-align: center
+    font-size: 1em;
+}
+
+.trophy-2x {
+    font-size: 2em;
+}
+
+
+.trophy-3x {
+    font-size: 3em;
+}
+
+.trophy .cup {
+    font-size: 3em;
+}
+
+.trophy .star {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    margin-left: -18px;
+    font-size: 1em;
+}
 
