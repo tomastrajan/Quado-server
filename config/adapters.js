@@ -24,7 +24,7 @@ module.exports.adapters = {
         password : process.env.POSTGRES_PASSWORD,
         database : process.env.POSTGRES_DATABASE,
 
-        schema   : true //This makes sure that sails matches the database schema to your models.
+        schema   : false //This makes sure that sails matches the database schema to your models.
     },
 
     mysql: {
@@ -35,6 +35,6 @@ module.exports.adapters = {
         password : process.env.MYSQL_PASSWORD,
         database : process.env.MYSQL_DATABASE,
 
-        schema   : true //This makes sure that sails matches the database schema to your models.
+        schema   : false //This makes sure that sails matches the database schema to your models.
     }
 };
