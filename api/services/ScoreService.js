@@ -43,7 +43,7 @@ var ScoreService = {
         sails.log.info('Find scores for player - ' + gameMode + "/" + playerUuid);
         var result = [];
         Score.find(getScoresByGameModeQuery(gameMode))
-        .done(function(err, scores) {
+        .exec(function(err, scores) {
             for (var i = 0; i < scores.length; i++) {
                 if (scores[i].playerUuid === playerUuid) {
                     for (var j = 4; j >= 1; j--) {
@@ -71,7 +71,7 @@ var ScoreService = {
         sails.log.info('Find top scores - ' + gameMode + "/" + count);
         Score.find(getScoresByGameModeQuery(gameMode))
         .limit(count)
-        .done(function(err, scores) {
+        .exec(function(err, scores) {
             var i = 1;
             sails.log.info('Found scores', scores);
             (scores || []).forEach(function(score) {
@@ -84,17 +84,16 @@ var ScoreService = {
 
     findScores: function (gameMode, pagination, callback) {
 
-        Score.find(getScoresByGameModeQuery(gameMode)).done(function(err, scores) {
+        Score.find(getScoresByGameModeQuery(gameMode)).exec(function(err, scores) {
             pagination.count = scores.length;
             pagination.pageCount = Math.ceil(pagination.count / pagination.pageSize);
 
             Score.find(getScoresByGameModeQuery(gameMode))
             .limit(pagination.pageSize)
             .skip(pagination.page * pagination.pageSize)
-            .done(function(err, scores) {
-                sails.log.info('Found scores', scores);
+            .exec(function(err, scores) {
                 var i = 1;
-                (scores || []).forEach(function(score) {
+                scores.forEach(function(score) {
                     score.position = i + (pagination.page * pagination.pageSize);
                     i++;
                 });
