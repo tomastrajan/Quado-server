@@ -26,6 +26,7 @@
   "author": "",
   "license": "",
   "engines": {
-    "node": "8.x"
+    "node": "6.x",
+    "npm": "3.x"
   }
 }
