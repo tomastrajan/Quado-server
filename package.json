@@ -4,15 +4,18 @@
   "version": "0.0.0",
   "description": "a Sails application",
   "dependencies": {
-    "sails": "0.9.16",
+    "dotenv": "^8.2.0",
+    "dotenv-defaults": "^2.0.1",
+    "ejs": "2.5.7",
+    "express": "^4.17.1",
+    "forever": "~0.11.1",
     "grunt": "0.4.1",
+    "moment": "*",
+    "optimist": "0.3.4",
+    "sails": "0.9.16",
     "sails-disk": "~0.9.0",
     "sails-mysql": "~0.9.0",
-    "sails-postgresql": "~0.9.0",
-    "ejs": "2.5.7",
-    "optimist": "0.3.4",
-    "forever": "~0.11.1",
-	"moment": "*"
+    "sails-postgresql": "~0.9.0"
   },
   "scripts": {
     "start": "node app.js",
@@ -21,5 +24,8 @@
   "main": "app.js",
   "repository": "",
   "author": "",
-  "license": ""
+  "license": "",
+  "engines": {
+    "node": "8.x"
+  }
 }
