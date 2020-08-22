@@ -68,11 +68,13 @@ var ScoreService = {
     },
 
     findTopScores: function (gameMode, count, callback) {
+        sails.log.info('Find top scores - ' + gameMode + "/" + count);
         Score.find(getScoresByGameModeQuery(gameMode))
         .limit(count)
         .done(function(err, scores) {
             var i = 1;
-            scores.forEach(function(score) {
+            sails.log.info('Found scores', scores);
+            (scores || []).forEach(function(score) {
                 score.position = i;
                 i++;
             });
@@ -90,8 +92,9 @@ var ScoreService = {
             .limit(pagination.pageSize)
             .skip(pagination.page * pagination.pageSize)
             .done(function(err, scores) {
+                sails.log.info('Found scores', scores);
                 var i = 1;
-                scores.forEach(function(score) {
+                (scores || []).forEach(function(score) {
                     score.position = i + (pagination.page * pagination.pageSize);
                     i++;
                 });
