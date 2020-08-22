@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "description": "a Sails application",
   "dependencies": {
+    "connect": "^3.7.0",
     "cookie": "^0.4.1",
     "dotenv": "^8.2.0",
     "dotenv-defaults": "^2.0.1",
